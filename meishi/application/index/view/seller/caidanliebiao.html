@@ -1,0 +1,145 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<title>菜单列表</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+<link rel="stylesheet" href="__STATIC__/admin/assets/css/amazeui.min.css"/>
+<link rel="stylesheet" href="__STATIC__/admin/assets/css/admin.css">
+<script src="__STATIC__/admin/assets/js/jquery.min.js"></script>
+<script src="__STATIC__/admin/assets/js/app.js"></script>
+</head>
+<body>
+</head>
+
+<body>
+<header class="am-topbar admin-header">
+  <div class="am-topbar-brand"><img src="__STATIC__/admin/assets/i/logo.png"></div>
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav admin-header-list">
+
+      <li class="am-hide-sm-only" style="float: right;"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main"> 
+
+<div class="nav-navicon admin-main admin-sidebar">
+    
+    
+    <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎商家管理员：{$Think.session.seller} <a href="{:url('index/index')}" style="color: #aeb2b7;">注销</a></div>
+    <div class="sideMenu">
+      <h3 class="am-icon-flag"><em></em> <a href="#">点餐信息管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href=""><a href="{:url('diancanliebiao')}">点餐列表</a></a></li>
+        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'><a href="{:url('tianjiadiancan')}">添加点餐</a></li>
+      </ul>
+
+      <h3 class="am-icon-users"><em></em> <a href="#">菜品信息管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href="{:url('caidanliebiao')}">菜单列表</a></li>
+        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'><a href="{:url('shangchuancaipin')}">上传菜品</a></li>
+      </ul>
+
+      <h3 class="am-icon-cart-plus"><em></em> <a href="#">收入管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href="{:url('shouruliebiao')}">收入列表</a></li>
+      </ul>
+    </div>
+    
+    <script type="text/javascript">
+      jQuery(".sideMenu").slide({
+        titCell:"h3", //鼠标触发对象
+        targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+        effect:"slideDown", //targetCell下拉效果
+        delayTime:300 , //效果时间
+        triggerTime:150, //鼠标延迟触发时间（默认150）
+        defaultPlay:true,//默认是否执行效果（默认true）
+        returnDefault:true //鼠标从.sideMen移走后返回默认状态（默认false）
+        });
+    </script>    
+</div>
+<div class="admin-biaogelist">
+
+    <div class="listbiaoti am-cf">
+      <ul class="am-icon-flag on">菜品信息管理</ul>
+      
+      <dl class="am-icon-home" style="float: right;"> 当前位置： 菜单列表 > <a href="{:url('index')}">首页</a></dl>
+      
+      <dl>
+        <a href="{:url('shangchuancaipin')}"><button type="button" class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus">上传菜品</button></a>
+      </dl>     
+    </div>
+    <volist name='re' id='re'>
+    <form class="am-form am-g" action="{:url('caidanliebiao')}" method="post">
+          <table width="100%" class="am-table am-table-bordered am-table-radius am-table-striped">
+            <thead>
+              <tr class="am-success">
+                <th class="table-check"><input type="checkbox" /></th>
+                <th class="table-id">ID</th>
+                <th class="table-title">菜品名称</th>
+                <th class="table-type">菜品价格</th>
+                <th class="table-type">菜品人气</th>
+                <th class="table-author am-hide-sm-only">菜品图片</th>
+                <th width="163px" class="table-set">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+            {volist name="re" id="er"}
+             <tr>
+                <td><input type="checkbox" /></td>
+                <td>{$er.id}</td>
+                <td>{$er.name}</td>
+                <td>{$er.price}</td>
+                <td>{$er.num}</td>
+                <td class="am-hide-sm-only"><img src="__STATIC__/seller/img/{$er.pic}" style="width: 60px;height: 40px;"></td>
+                <td><div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <a href="{:url('xiugaicaipin',array('id'=>$er.id))}"><button name="{$er.id}" type="button" title="修改菜品" class="am-btn am-btn-default am-btn-xs am-text-success am-round"><span class="am-icon-pencil-square-o"></span> </button></a>
+                      <button name="shanchu" type="button" id="{$er.id}" title="下架菜品" class="am-btn am-btn-default am-btn-xs am-text-danger am-round"><span class="am-icon-trash-o"></span></button>
+                    </div>
+                  </div></td>
+              </tr>
+            {/volist}             
+            </tbody>
+          </table>
+        <hr />
+          <p>
+        备注：操作图标含义
+         <a class="am-text-success am-icon-file" title="修改菜品"> 修改菜品</a> 
+         <a class="am-icon-trash-o am-text-danger" title="下架"> 下架菜品</a>
+        </p>
+        </form>
+        </volist>
+<div class="foods">
+      <ul>后台管理系统</ul>
+      <dl><a href="" title="返回头部" class="am-icon-btn am-icon-arrow-up"></a></dl>    
+    </div>
+</div>
+</div>
+</div>
+</body>
+<script src="__STATIC__/admin/assets/js/amazeui.min.js"></script>
+<script type="text/javascript">
+ $(".am-text-danger").click(function(){
+   $(this).parents('tr').css('display','none');  
+  })
+  $(".am-text-danger").click(function(){
+      var id=$(this).attr('id');     
+        $.ajax({  
+                url:"{:url('shanchucaipin')}",  
+                type:"post",  
+//            async:false,//同步  
+                data:{"id":id},//传出的数据  
+                dataType:"json",//返回的数据类型，常用：html/text/json  
+                success:function(data){ 
+                   alert($data);                      
+                }  
+            })     
+  }) 
+</script>
+</html>

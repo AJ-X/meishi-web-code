@@ -1,0 +1,9 @@
+<?php
+	$con=mysql_connect('127.0.0.1','root','');
+	if($con){
+	echo"数据库连接成功！";
+	}
+	else{
+	die("数据库连接失败！".mysql_connect());
+	}
+?>

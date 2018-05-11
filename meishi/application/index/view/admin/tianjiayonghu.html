@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<title>添加用户</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+<link rel="stylesheet" href="__STATIC__/admin/assets/css/amazeui.min.css"/>
+<link rel="stylesheet" href="__STATIC__/admin/assets/css/admin.css">
+<script src="__STATIC__/admin/assets/js/jquery.min.js"></script>
+<script src="__STATIC__/admin/assets/js/app.js"></script>
+</head>
+<body>
+</head>
+
+<body>
+<header class="am-topbar admin-header">
+  <div class="am-topbar-brand"><img src="__STATIC__/admin/assets/i/logo.png"></div>
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav admin-header-list">
+
+      <li class="am-hide-sm-only" style="float: right;"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main"> 
+
+<div class="nav-navicon admin-main admin-sidebar">
+    
+    
+    <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：{$Think.session.admin} <a href="{:url('index/index')}" style="color: #aeb2b7;">注销</a></div>
+    <div class="sideMenu">
+      <h3 class="am-icon-flag"><em></em> <a href="#">点餐信息管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href=""><a href="{:url('diancanliebiao')}">点餐列表</a></a></li>
+        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'><a href="{:url('tianjiadiancan')}">添加点餐</a></li>
+      </ul>
+
+      <h3 class="am-icon-users"><em></em> <a href="#">用户信息管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href="{:url('yonghuliebiao')}">用户列表</a></li>
+        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'><a href="#">添加用户</a></li>
+      </ul>
+
+      <h3 class="am-icon-cart-plus"><em></em> <a href="#">商家信息管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href="{:url('shangjialiebiao')}">商家列表</a></li>
+        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'><a href="{:url('tianjiashangjia')}">添加商家</a></li>
+      </ul>
+
+      <h3 class="am-icon-volume-up"><em></em> <a href="#">投诉与建议管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href="{:url('liuyanliebiao')}">留言列表</a></li>
+      </ul>
+
+    </div>
+    
+    <script type="text/javascript">
+      jQuery(".sideMenu").slide({
+        titCell:"h3", //鼠标触发对象
+        targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+        effect:"slideDown", //targetCell下拉效果
+        delayTime:300 , //效果时间
+        triggerTime:150, //鼠标延迟触发时间（默认150）
+        defaultPlay:true,//默认是否执行效果（默认true）
+        returnDefault:true //鼠标从.sideMen移走后返回默认状态（默认false）
+        });
+    </script>    
+</div>
+
+<div class=" admin-content">
+
+<div class="admin-biaogelist">
+  
+    <div class="listbiaoti am-cf">
+      <ul class="am-icon-flag on"> 添加用户</ul>
+      
+      <dl class="am-icon-home" style="float: right;"> 当前位置： 添加用户 > <a href="{:url('index')}">首页</a></dl>
+
+      
+      
+    </div>
+  
+    <div class="fbneirong">
+      <form class="am-form" action="{:url('yonghutianjia')}" method="post">
+        <div class="am-form-group am-cf">
+          <div class="zuo">用户名：</div>
+          <div class="you">
+            <input type="text" name="username" class="am-input-sm" id="doc-ipt-email-1" placeholder="请输入用户名">
+          </div>
+        </div>
+        <div class="am-form-group am-cf">
+          <div class="zuo">用户密码：</div>
+          <div class="you">
+            <input type="text" name="password" class="am-input-sm" id="doc-ipt-pwd-1" placeholder="请输入用户密码">
+          </div>
+        </div>
+        <div class="am-form-group am-cf">
+          <div class="you" style="margin-left: 11%;">
+              <button type="submit" class="am-btn am-btn-success am-radius">添加</button>
+          </div>
+        </div>
+      </form>
+    </div> 
+ <div class="foods">
+      <ul>后台管理系统</ul>
+      <dl><a href="" title="返回头部" class="am-icon-btn am-icon-arrow-up"></a></dl>    
+    </div>
+</div>
+</div>
+</div>
+<script src="__STATIC__/admin/assets/js/amazeui.min.js"></script>
+</body>
+</html>

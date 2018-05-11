@@ -1,0 +1,146 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<title>用户列表</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+<link rel="stylesheet" href="__STATIC__/admin/assets/css/amazeui.min.css"/>
+<link rel="stylesheet" href="__STATIC__/admin/assets/css/admin.css">
+<script src="__STATIC__/admin/assets/js/jquery.min.js"></script>
+<script src="__STATIC__/admin/assets/js/app.js"></script>
+</head>
+<body>
+</head>
+
+<body>
+<header class="am-topbar admin-header">
+  <div class="am-topbar-brand"><img src="__STATIC__/admin/assets/i/logo.png"></div>
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav admin-header-list">
+
+      <li class="am-hide-sm-only" style="float: right;"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main"> 
+
+<div class="nav-navicon admin-main admin-sidebar">
+    
+    
+    <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：{$Think.session.admin} <a href="{:url('index/index')}" style="color: #aeb2b7;">注销</a></div>
+    <div class="sideMenu">
+      <h3 class="am-icon-flag"><em></em> <a href="#">点餐信息管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href=""><a href="{:url('diancanliebiao')}">点餐列表</a></a></li>
+        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'><a href="{:url('tianjiadiancan')}">添加点餐</a></li>
+      </ul>
+
+      <h3 class="am-icon-users"><em></em> <a href="#">用户信息管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href="#">用户列表</a></li>
+        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'><a href="{:url('tianjiayonghu')}">添加用户</a></li>
+      </ul>
+
+      <h3 class="am-icon-cart-plus"><em></em> <a href="#">商家信息管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href="{:url('shangjialiebiao')}">商家列表</a></li>
+        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'><a href="{:url('tianjiashangjia')}">添加商家</a></li>
+      </ul>
+
+      <h3 class="am-icon-volume-up"><em></em> <a href="#">投诉与建议管理</a></h3>
+      <ul style="list-style: none;">
+        <li><a href="{:url('liuyanliebiao')}">留言列表</a></li>
+      </ul>
+
+    </div>
+    
+    <script type="text/javascript">
+      jQuery(".sideMenu").slide({
+        titCell:"h3", //鼠标触发对象
+        targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+        effect:"slideDown", //targetCell下拉效果
+        delayTime:300 , //效果时间
+        triggerTime:150, //鼠标延迟触发时间（默认150）
+        defaultPlay:true,//默认是否执行效果（默认true）
+        returnDefault:true //鼠标从.sideMen移走后返回默认状态（默认false）
+        });
+    </script>    
+</div>
+<div class="admin-biaogelist">
+
+    <div class="listbiaoti am-cf">
+      <ul class="am-icon-flag on">用户信息管理</ul>
+      
+      <dl class="am-icon-home" style="float: right;"> 当前位置： 用户列表 > <a href="{:url('index')}">首页</a></dl>
+      
+      <dl>
+        <a href="{:url('tianjiayonghu')}"><button type="button" class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus">添加用户</button></a>
+      </dl>     
+    </div>
+    <volist name='re' id='re'>
+    <form class="am-form am-g" action="{:url('shanchuyonghu')}" method="post">
+          <table width="100%" class="am-table am-table-bordered am-table-radius am-table-striped">
+            <thead>
+              <tr class="am-success">
+                <th class="table-check"><input type="checkbox" /></th>
+                <th class="table-id">ID</th>
+                <th class="table-title">用户名</th>
+                <th class="table-type">用户密码</th>
+                <th width="163px" class="table-set">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+            {volist name="re" id="er"}
+             <tr>
+                <td><input type="checkbox" /></td>
+                <td>{$er.id}</td>
+                <td>{$er.username}</td>
+                <td>{$er.password}</td>
+                <td><div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <a href="#"><button name="shanchu" type="button" id="{$er.id}" title="删除用户" class="am-btn am-btn-default am-btn-xs am-text-danger am-round"><span class="am-icon-trash-o"></span></button></a>
+                    </div>
+                  </div></td>
+              </tr>
+            {/volist}             
+            </tbody>
+          </table>
+        <hr />
+          <p>
+        备注：操作图标含义
+         <a class="am-icon-trash-o am-text-danger" title="删除"> 删除用户</a>
+        </p>
+        </form>
+        </volist>
+<div class="foods">
+      <ul>后台管理系统</ul>
+      <dl><a href="" title="返回头部" class="am-icon-btn am-icon-arrow-up"></a></dl>    
+    </div>
+</div>
+</div>
+</div>
+</body>
+<script src="__STATIC__/admin/assets/js/amazeui.min.js"></script>
+<script type="text/javascript">
+ $(".am-text-danger").click(function(){
+   $(this).parents('tr').css('display','none');  
+  })
+  $(".am-text-danger").click(function(){
+      var id=$(this).attr('id');     
+        $.ajax({  
+                url:"{:url('shanchuyonghu')}",  
+                type:"post",  
+//            async:false,//同步  
+                data:{"id":id},//传出的数据  
+                dataType:"json",//返回的数据类型，常用：html/text/json  
+                success:function(data){ 
+                   alert($data);                      
+                }  
+            })     
+  }) 
+</script>
+</html>

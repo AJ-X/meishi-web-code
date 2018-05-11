@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>搜索页面</title>
+<link rel="stylesheet" href="__STATIC__/index/default.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="author" content="www.cssmoban.com" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+</head> 
+<body>
+<header>
+    <div class="header-nav">
+        <div role="navigation">
+            <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="__STATIC__/index/images/logo.png"></a>
+            <ul class="hd-nav">
+                <li><a href="javascript:" name="index">网站首页<span><i class="iconfont ">&#xe6aa;</i></span></a></li>               
+                <li style="margin-left: 20px;"><a href="#caidan" name="productlist">菜式欣赏<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li style="margin-left: 20px;"><a href="#main-head" name="article">健康资讯<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li style="margin-left: 20px;"><a href="#we" name="about">联系我们<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+            </ul>
+            <ul style="margin-right: -130px;">
+                <li><a href="{:url('gerenzhongxin',array('username'=>$Think.session.user))}">欢迎：{$Think.session.user}</a></li>
+                <li style="margin-left: 15px;"><a href="{:url('index')}">注销</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="header-carousel container">
+
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="__STATIC__/index/images/banner.jpg" style="width:100%;" alt="First slide">
+                </div>
+                <div class="item">
+                    <img src="__STATIC__/index/images/banner2.jpg" style="width:100%;" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img src="__STATIC__/index/images/banner3.jpg" style="width:100%;" alt="Third slide">
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel"
+               data-slide="prev"></a>
+            <a class="carousel-control right" href="#myCarousel"
+               data-slide="next"></a>
+        </div>
+
+    </div>
+</header>
+<main class="main-first-bgcolor">
+    <div>
+        <div class="main-head">
+            <p>
+                <span>我们提供</span>
+            </p>
+        </div>
+        <div class="main-we-provide">
+            <ul>
+                <li><span><img src="__STATIC__/index/images/lunch.png" alt=""></span>
+                    <h2>中餐</h2>
+                    <p>借助西餐的制作流程工序，结合中国人的口味需求及中餐注重营养均衡，在我们国人自己的饮食口味基础上再次创新，全力打造中式餐饮新“食”尚。</p></li>
+                <li><span><img src="__STATIC__/index/images/dinner.png" alt=""></span>
+                    <h2>晚餐</h2>
+                    <p>结合晚餐注重营养均衡，在我们国人自己的饮食口味基础上再次创新，按照科学配餐的原则挑选食材，相互搭配，全力打造中式餐饮新“食”尚。</p></li>
+                <li><span><img src="__STATIC__/index/images/coffee.png" alt=""></span>
+                    <h2>甜品/咖啡</h2>
+                    <p>借助西餐甜点的制作流程工序，结合中国人的口味需求及营养均衡，在我们国人自己的饮食口味基础上再次创新，全力打造中式甜品新“食”尚。</p></li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <div class="main-head" id="caidan">
+            <p>
+                <span>菜式欣赏</span>
+            </p>
+        </div>
+    </div>
+</main>
+<main>
+    <img class="mdbanner" src="__STATIC__/index/images/mdbanner.jpg">
+</main>
+<main>
+    <div class="main-body">
+        <p><span>每一种食物来源都经过我们的精挑细选，关于食材我们只选最天然、健康、优质的，只为一份对极致美味的追求，用心做好每一份菜，是我们不变的宗旨。</span></p>
+        <ul class="main-body-img">
+            <li><img src="__STATIC__/index/images/mdlist1.jpg"></li>
+            <li><img src="__STATIC__/index/images/mdlist2.jpg"></li>
+            <li><img src="__STATIC__/index/images/mdlist3.jpg"></li>
+            <li><img src="__STATIC__/index/images/mdlist4.jpg"></li>
+            <li><img src="__STATIC__/index/images/mdlist5.jpg"></li>
+            <li><img src="__STATIC__/index/images/mdlist6.jpg"></li>
+            <li><img src="__STATIC__/index/images/mdlist7.jpg"></li>
+            <li><img src="__STATIC__/index/images/mdlist8.jpg"></li>
+            <li><img src="__STATIC__/index/images/mdlist9.jpg"></li>
+        </ul>
+    </div>
+</main>
+<main>
+    <ul class="main-submenu">
+        <li><a href="#">点 菜 菜 单</a></li>
+    </ul>
+    <ul class="main-submenu-info main-submenu-first" id="wucan" style="display: block;">
+        {volist name="re" id="er"}
+        <li><a href="{:url('diancan',array('id'=>$er.id,'username'=>$Think.session.user))}">
+            <div class="food-name">
+                <p>{$er.name}</p>
+                <p style="font-size: 12px;">美食人气排名{$er.num}</p>
+            </div>
+            <div class="food-price">
+                <p>￥<span>{$er.price}</span></p>
+            </div>
+            <div class="img-bg"></div>
+            <img src="__STATIC__/seller/img/{$er.pic}"></a></li>
+        {/volist}
+    </ul>
+    <a class="more" id="more" href="{:url('gerenzhongxin',array('username'=>$Think.session.user))}">订单中心</a>
+</main>
+<main>
+    <div>
+        <div class="main-head" id="main-head">
+            <p><span>健康资讯</span></p>
+        </div>
+    </div>
+    <div class="article-list-banner"><img src="__STATIC__/index/images/foodnews1.jpg"></div>
+    <ul class="article-list">
+        <li>
+            <div class="article-date">
+                <strong>06</strong>
+                <p>2017-06-01</p>
+
+            </div>
+            <div class="article-info">
+            
+                    <h3>一大波餐饮大咖正在分享健康经验，你需要的都在这里！</h3>
+                    <p>大多数老餐饮人都有一种感觉，那就是近几年像原来那样按部就班地做饮食好像越来越难了，行业里的“套路”越来越深。行业竞争越来越大，饮食健康...</p>
+        
+            </div>
+        </li>
+
+        <li>
+            <div class="article-date">
+                <strong>06</strong>
+                <p>2017-06-01</p>
+            </div>
+            <div class="article-info">
+          
+                    <h3>一大波餐饮大咖正在分享健康经验，你需要的都在这里！</h3>
+                    <p>大多数老餐饮人都有一种感觉，那就是近几年像原来那样按部就班地做饮食好像越来越难了，行业里的“套路”越来越深。行业竞争越来越大，饮食健康...</p>
+
+            </div>
+        </li>
+        <li>
+            <div class="article-date">
+                <strong>06</strong>
+                <p>2017-06-01</p>
+            </div>
+            <div class="article-info">
+            
+                    <h3>一大波餐饮大咖正在分享健康经验，你需要的都在这里！</h3>
+                    <p>大多数老餐饮人都有一种感觉，那就是近几年像原来那样按部就班地做饮食好像越来越难了，行业里的“套路”越来越深。行业竞争越来越大，饮食健康...</p>
+         
+            </div>
+        </li>
+        <li>
+            <div class="article-date">
+                <strong>06</strong>
+                <p>2017-06-01</p>
+            </div>
+            <div class="article-info">
+       
+                    <h3>一大波餐饮大咖正在分享健康经验，你需要的都在这里！</h3>
+                    <p>大多数老餐饮人都有一种感觉，那就是近几年像原来那样按部就班地做饮食好像越来越难了，行业里的“套路”越来越深。行业竞争越来越大，饮食健康...</p>
+            
+            </div>
+        </li>
+        <li>
+            <div class="article-date">
+                <strong>06</strong>
+                <p>2017-06-01</p>
+            </div>
+            <div class="article-info">
+         
+                    <h3>一大波餐饮大咖正在分享健康经验，你需要的都在这里！</h3>
+                    <p>大多数老餐饮人都有一种感觉，那就是近几年像原来那样按部就班地做饮食好像越来越难了，行业里的“套路”越来越深。行业竞争越来越大，饮食健康...</p>
+             
+            </div>
+        </li>
+        <li>
+            <div class="article-date">
+                <strong>06</strong>
+                <p>2017-06-01</p>
+            </div>
+            <div class="article-info">
+       
+                    <h3>一大波餐饮大咖正在分享健康经验，你需要的都在这里！</h3>
+                    <p>大多数老餐饮人都有一种感觉，那就是近几年像原来那样按部就班地做饮食好像越来越难了，行业里的“套路”越来越深。行业竞争越来越大，饮食健康...</p>
+            
+            </div>
+        </li>
+    </ul>
+    <section class="article-btn">
+        <span class="article-prev-btn"></span>
+        <span class="article-next-btn"></span>
+    </section>
+</main>
+<main>
+
+        <div class="main-head" id="we">
+            <p><span>联系我们</span></p>
+        </div>
+        <div class="main-reserve">
+            <form action="{:url('admin/tijiaoliuyan',array('username'=>$Think.session.user))}" method="post" id="food-reserve">
+                <ul>
+                    <li>
+                        <label for="username">姓名</label>
+                        <input type="text" name="name" id="name">
+                    </li>
+                    <li>
+                        <label for="phonenumber">电话号码</label>
+                        <input type="text" name="phone" id="phone">
+                    </li>
+                    <li>
+                        <label for="email">电子邮件</label>
+                        <input type="text" name="email" id="email">
+                    </li>
+                    <li>
+                        <label for="guestbook">留言</label>
+                        <textarea cols="30" rows="6" class="form-control" id="message" name="message" style="border:none; background-color:rgba(255, 255, 255, 0.5);"></textarea>
+                    </li>
+                </ul>
+                <a class="reserve">提交</a>
+
+            </form>
+        </div>
+</main>
+
+<footer>
+    <div>
+        <ul class="footer-top">
+            <li><a href="javascript:">网站首页</a></li>
+            <li><a href="javascript:">菜式欣赏</a></li>
+            <li><a href="javascript:">健康资讯</a></li>
+            <li><a href="javascript:">联系我们</a></li>
+        </ul>
+    </div>
+    <div>
+        <ul class="footer-body">
+            <li>
+                <span>电话:</span><span>0714-8868XXX</span>
+            </li>
+            <li>
+                <span>邮箱:</span><span>XXX@dayeyunXXXXXX.com</span>
+            </li>
+            <li>
+                <span>地址:</span><span>XX省XX市XXX大道XXX办公室</span>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+<script src="__STATIC__/index/lib/jquery/jquery.js"></script>
+<script src="__STATIC__/index/lib/bootstrap/bootstrap.js"></script>
+<script src="__STATIC__/index/js/main.js"></script>
+</html>

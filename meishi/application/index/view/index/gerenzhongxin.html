@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人中心</title>
+
+<link rel="stylesheet" href="__STATIC__/index/default.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="author" content="www.cssmoban.com" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="default.css">
+</head>
+<body>
+
+<header>
+    <div class="header-nav">
+        <div role="navigation">
+            <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="__STATIC__/index/images/logo.png"></a>
+            <ul class="hd-nav">
+                <li><a href="{:url('indexdl')}" name="index">网站首页<span><i class="iconfont ">&#xe6aa;</i></span></a></li>               
+                <li style="margin-left: 20px;"><a href="{:url('indexdl')}" name="productlist">菜式欣赏<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li style="margin-left: 20px;"><a href="{:url('indexdl')}" name="article">健康资讯<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li style="margin-left: 20px;"><a href="{:url('indexdl')}" name="about">联系我们<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+            </ul>
+            <ul style="margin-right: -130px;">
+                <li><a href="{:url('gerenzhongxin')}">欢迎：{$Think.session.user}</a></li>
+                <li style="margin-left: 15px;"><a href="{:url('index')}">注销</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="header-carousel container">
+
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="__STATIC__/index/images/banner.jpg" style="width:100%;" alt="First slide">
+                </div>
+                <div class="item">
+                    <img src="__STATIC__/index/images/banner2.jpg" style="width:100%;" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img src="__STATIC__/index/images/banner3.jpg" style="width:100%;" alt="Third slide">
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel"
+               data-slide="prev"></a>
+            <a class="carousel-control right" href="#myCarousel"
+               data-slide="next"></a>
+        </div>
+
+    </div>
+</header>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            用户名
+                        </th>
+                        <th>
+                            订单名称
+                        </th>
+                        <th>
+                            订单价格
+                        </th>
+                        <th>
+                            订单时间
+                        </th>
+                        <th>
+                            订单状态
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="re" id="er"}
+                    <tr class="success">
+                        <td>
+                            {$er.username}
+                        </td>
+                        <td>
+                            {$er.name}
+                        </td>
+                        <td>
+                            {$er.price}
+                        </td>
+                        <td>
+                            {$er.time|date="Y-m-d H:i:s",###}
+                        </td>
+                        <td>
+                            {$er.zhuangtai}
+                        </td>
+                    </tr>
+                    {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<footer>
+    <div>
+        <ul class="footer-top">
+            <li><a href="{:url('indexdl')}">网站首页</a></li>
+            <li><a href="{:url('indexdl')}">菜式欣赏</a></li>
+            <li><a href="{:url('indexdl')}">健康资讯</a></li>
+            <li><a href="{:url('indexdl')}">联系我们</a></li>
+        </ul>
+    </div>
+    <div>
+        <ul class="footer-body">
+            <li>
+                <span>电话:</span><span>0714-8868XXX</span>
+            </li>
+            <li>
+                <span>邮箱:</span><span>XXX@dayeyunXXXXXX.com</span>
+            </li>
+            <li>
+                <span>地址:</span><span>XX省XX市XXX大道XXX办公室</span>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+
+
+</body>
+
+<script src="__STATIC__/index/lib/jquery/jquery.js"></script>
+<script src="__STATIC__/index/lib/bootstrap/bootstrap.js"></script>
+<script src="__STATIC__/index/js/main.js"></script>
+</html>
